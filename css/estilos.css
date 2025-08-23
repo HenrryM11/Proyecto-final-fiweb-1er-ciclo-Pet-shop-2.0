@@ -1,11 +1,98 @@
-/* Estilos generales */
+
+ /* estilos base (para moviles) */
+    .columna {
+        width: 100%;            /*1 columna en movil*/
+        padding: 1rem;          /*espacio escalable*/
+        margin-bottom: 1rem;    /*separacion entre cards*/
+    }
+    /* estilos para tablets */
+    @media (min-width: 768px) {
+        .columna {
+            width: 48%;         /*2 columnas en tablets*/
+            margin-right: 2%;   /*espacio entre columnas*/
+        }
+        .columna:nth-child(2n) {
+            margin-right: 0;    /*eliminar margen en la segunda columna*/
+        }
+    }   
+    /* para pantallas grandes (desktop) */
+    @media(min-width: 1024px){
+    .columna{
+                width: 23%;             /*4 columnas en desktop*/
+                margin-right: 2.66%;    /*Distribucion uniforme*/
+    }
+    .container {
+                max-width: 4200px;
+                margin: 0 auto;
+                background-color: #dbc4c4;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                min-height: 100vh;
+    /* header con logo y navegacion */
+        .header{
+                grid-area: header;
+                background: linear-gradient(135deg,#667eea 0%, #764ba7 -100%);
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0% 30%;
+                border-radius: 8px;
+                position: relative;
+        /*css grid layout */
+                display: grid;
+                grid-template-columns: 1fr 300px;
+                grid-template-rows: 100px 1fr 60px;
+                grid-template-areas: 
+                "header header"
+                "main sidebar"
+                "footer footer";
+                gap: 15px;
+                padding: 15px;
+
+    }
+
+    }
+    .logo {
+        font-size: 28px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .marco_logo {
+            width: 100px;
+            img {
+                width: 100%;
+
+            }
+            .nav a {
+                    color: azure;
+                    text-decoration: none;
+                    padding: 10px 20px;
+                    transition: all 0.3s ease;
+                    font-weight: 500;
+                }
+
+                    .nav a:hover {
+                        background-color: rgba(255,255,255,0.2);
+                        transform: translateY(-2px);
+
+                    }
+            }
+
+        }
+    }
+        
+    }/* Estilos generales */
     body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f4f4f4;
+        background-color: #dbc4c4;
+        
     }
-
     header {
         background-color: #ff9800;
         color: white;
